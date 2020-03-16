@@ -1,4 +1,5 @@
 """Class to compare performance with different classifiers"""
+import logging
 import sys
 
 from imblearn.over_sampling import SMOTE
@@ -27,6 +28,7 @@ sys.path.append('../../')
 #  Directory
 path = '../../data/'
 
+logging.basicConfig(level=logging.INFO)
 
 def logistic_training(X_train,y_train,X_test,y_test):
 
@@ -124,6 +126,7 @@ for filename in os.listdir(path):
 
     # oversample
     print("---------------------------------------------------------")
+    logging.info("---------------------------------------------------------")
     print("Dataset: " + filename)
     # print("Oversampling in progress ...")
     # GSMOTE = EGSmote()
